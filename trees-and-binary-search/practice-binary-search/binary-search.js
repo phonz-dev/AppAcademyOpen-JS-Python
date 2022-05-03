@@ -1,7 +1,5 @@
 function linearSearch (arr, target) {
-
-  // Can you solve this in one line?
-
+  return arr.indexOf(target);
 };
 
 function binarySearch(arr, target) {
@@ -23,6 +21,25 @@ function binarySearch(arr, target) {
 
   // Return -1 if the loop exits with overlapping pointers
 
+  let [low, high] = [0, arr.length - 1];
+
+  while (low <= high) {
+    const mid = Math.floor((low + high) / 2)
+
+    if (target === arr[mid]) {
+      return mid;
+    }
+
+    if (target > arr[mid]) {
+      low = mid + 1;
+    }
+
+    if (target < arr[mid]) {
+      high = mid - 1;
+    }
+  }
+
+  return -1;
 }
 
 
