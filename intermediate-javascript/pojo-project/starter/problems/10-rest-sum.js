@@ -10,8 +10,12 @@ restSum(0); // => 0
 ***********************************************************************/
 
 // you'll need to change the parameters!
-function restSum() {
-  // your code here
+function restSum(...params) {
+  const sum = params.reduce((total, num) => {
+    return total + num;
+  }, 0)
+
+  return sum;
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
