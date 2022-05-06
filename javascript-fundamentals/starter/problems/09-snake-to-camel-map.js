@@ -17,7 +17,16 @@ console.log(snakeToCamel('APp_ACADEMY_iS_cOol')); // 'AppAcademyIsCool'
 
 
 // your code here
+const toCapitalize = str => (
+    str[0].toUpperCase() + str.slice(1).toLowerCase()
+)
 
+const snakeToCamel = str => {
+    const parts = str.split('_');
+    const newParts = parts.map(part => toCapitalize(part));
+
+    return newParts.join('');
+}
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 

@@ -18,6 +18,15 @@ console.log(longestWord('')); // ''
 
 
 // your code here
+const longestWord = sentence => {
+    const words = sentence.split(' ');
+
+    const longest = words.reduce((w1, w2) =>
+        w1.length >= w2.length ? w1 : w2
+    )
+
+    return longest;
+}
 
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/

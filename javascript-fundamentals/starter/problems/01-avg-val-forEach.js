@@ -14,6 +14,17 @@ console.log(avgVal([])); // null
 */
 
 // your code here
+const avgVal = nums => {
+  let sum = 0;
+
+  nums.forEach(num => {
+    sum += num;
+  })
+
+  const average = sum / nums.length;
+
+  return average || null;
+}
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 

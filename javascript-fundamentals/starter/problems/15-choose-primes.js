@@ -1,4 +1,4 @@
-/*
+ /*
 
 Write a function `choosePrimes(nums)` that takes in an array of numbers as args.
 The function should return a new array containing the primes from the original
@@ -20,7 +20,21 @@ console.log(choosePrimes([5, 6, 4, 11, 2017])); // [ 5, 11, 2017 ]
 
 
 // your code here
+const isPrime = num => {
+    if (num < 2) {
+        return false;
+    }
 
+    for (i = 2; i < num; i++) {
+        if (num % i === 0) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+const choosePrimes = nums => nums.filter(num => isPrime(num));
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 

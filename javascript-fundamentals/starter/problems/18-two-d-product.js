@@ -27,6 +27,17 @@ console.log(twoDimensionalProduct(arr2)); // 88
 
 
 // your code here
+const twoDimensionalProduct = arr => {
+  const product = arr.reduce((total, row) => {
+    row.forEach(num => {
+      total *= num;
+    })
+
+    return total;
+  }, 1);
+
+  return product;
+}
 
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/

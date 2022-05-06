@@ -30,6 +30,31 @@ console.log(repeatingTranslate("her family flew to France"));   // "herer family
 
 
 // your code here
+const translateWord = word => {
+  const vowels = 'aeiou';
+  const lastChar = word[word.length - 1];
+
+  if (vowels.includes(lastChar)) {
+    return word + word;
+  }
+
+  for (let i = word.length - 1; i > 0; i--) {
+    if (vowels.includes(word[i])) {
+      return word + word.slice(i);
+    }
+  }
+
+  return word;
+}
+
+const repeatingTranslate = sentence => {
+  const words = sentence.split(' ');
+  const newWords = words.map(word =>
+      word.length >= 3 ? translateWord(word) : word
+    )
+
+  return newWords.join(' ');
+}
 
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/

@@ -18,6 +18,14 @@ console.log(hasThreeVowels('go home'));         //  false
 
 
 // your code here
+const hasThreeVowels = str => {
+    const vowels = 'aeiou';
+    const chars = str.split('');
+    const strVowels = chars.filter(char =>
+            vowels.includes(char)
+        )
+    return new Set(strVowels).size >= 3
+}
 
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/

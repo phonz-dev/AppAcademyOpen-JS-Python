@@ -17,7 +17,12 @@ console.log(productWithReduce([4, 3])); // 12
 
 
 // your code here
+const productWithReduce = nums => {
+  const reducer = (n1, n2) => n1 * n2;
+  const product = nums.reduce(reducer, 1);
 
+  return product;
+}
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 

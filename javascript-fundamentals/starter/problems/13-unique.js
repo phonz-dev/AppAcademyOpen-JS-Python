@@ -16,6 +16,18 @@ console.log(unique(['a', 'b', 'c', 'b'])); // ['a', 'b', 'c']
 
 // your code here
 
+const unique = arr => {
+    const uniques = arr.reduce((uniques, el) => {
+        if (!uniques.includes(el)) {
+            uniques.push(el);
+        }
+
+        return uniques;
+    }, []);
+
+    return uniques;
+}
+
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 

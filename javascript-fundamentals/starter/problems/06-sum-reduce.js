@@ -14,7 +14,12 @@ console.log(sumWithReduce([])); // 0
 
 
 // your code here
+const sumWithReduce = nums => {
+  const reducer = (n1, n2) => n1 + n2;
+  const sum = nums.reduce(reducer, 0);
 
+  return sum;
+}
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
