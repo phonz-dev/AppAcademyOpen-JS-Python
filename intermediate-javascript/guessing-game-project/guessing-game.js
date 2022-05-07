@@ -1,3 +1,4 @@
+const { syncBuiltinESMExports } = require('module');
 const readline = require('readline');
 
 const rl = readline.createInterface({
@@ -5,8 +6,14 @@ const rl = readline.createInterface({
   output: process.stdout
 })
 
+const randomInRange = (min, max) => {
+  const rand = Math.floor(Math.random() * (max - min + 1) + min);
 
-const secretNumber = 10;
+  return rand;
+}
+
+
+let secretNumber;
 
 const checkGuess = guess => {
   if (guess === secretNumber) {
@@ -36,3 +43,18 @@ const askGuess = () => {
 
   })
 }
+
+const askRange = () => {
+  rl.question('Enter a min number: ', min => {
+
+    rl.question('Enter a max number: ', max => {
+      secretNumber = randomInRange(Number(min), Number(max));
+
+      console.log(`I am thinking of a number between ${min} and ${max}...`);
+      askGuess();
+    })
+
+  })
+}
+
+askRange();
