@@ -1,4 +1,20 @@
-// Your code here
+class PartyPlanner {
+	constructor() {
+		this.guestList = [];
+	}
+
+	addToGuestList(name) {
+		this.guestList.push(name);
+	}
+
+	throwParty() {
+		if (!this.guestList.length) {
+			return 'Gotta add people to the guest list';
+		}
+
+		return `Welcome to the party ${this.guestList.join(' and ')}`;
+	}
+}
 
 
 /*****************************************************************************/
