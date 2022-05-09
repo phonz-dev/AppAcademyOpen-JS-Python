@@ -52,15 +52,16 @@ class Room {
   }
 
   getItemByName(name) {
+    const item = this.items.find(item => item.name === name);
 
-    // Fill this in
-
+    return item;
   }
 
   getEnemyByName(name) {
+    const enemies = this.getEnemies();
 
-    // Fill this in
-
+    return enemies.find(enemy => enemy.name === name);
+  }
 }
 
 module.exports = {
